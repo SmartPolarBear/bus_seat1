@@ -1,0 +1,31 @@
+{
+  "pages": [
+    "pages/buslist/buslist",
+    "pages/me/me",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#505790",
+    "navigationBarTitleText": "班车预约",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "borderStyle": "black",
+    "list": [{
+        "pagePath": "pages/buslist/buslist",
+        "text": "班次",
+        "iconPath": "pages/images/tab/bus.png",
+        "selectedIconPath": "pages/images/tab/bus_sel.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "我的",
+        "iconPath": "pages/images/tab/account.png",
+        "selectedIconPath": "pages/images/tab/account_sel.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
