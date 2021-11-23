@@ -1,0 +1,9 @@
+<!--pages/buslist/buslist.wxml-->
+<import src="../template/bus_item.wxml" />
+<view class="content">
+    <view class="list">
+        <block wx:for="{{buses}}">
+            <template is="bus_item" data="{{item}}" />
+        </block>
+    </view>
+</view>
