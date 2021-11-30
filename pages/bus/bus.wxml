@@ -1,4 +1,6 @@
 <import src="../template/bus_item.wxml" />
+<import src="../template/bus_row.wxml" />
+
 <view class="content">
     <view class="row">
         <block>
@@ -17,5 +19,12 @@
         </view>
         <view class="bus_hr2"></view>
     </block>
+    </view>
+    <view class="list">
+        <block wx:for="{{bus_rows}}">
+            <view id="{{item.row}}">
+                <template is="bus_row" data="{{item}}" />
+            </view>
+        </block>
     </view>
 </view>

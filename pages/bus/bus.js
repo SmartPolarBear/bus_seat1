@@ -11,10 +11,24 @@ Page({
      */
     onLoad: function (options) {
         let b = JSON.parse(options.busInfo);
+ 
+        let rows = [];
+        let row_count = (b.occupied + b.available) / 4;
+        for (let i = 0; i < row_count; i++) {
+            rows.push({
+                row: i,
+                availablity: [0, 0, 0, 0]
+            });
+        }
+
         this.setData({
-            bus: b
+            bus: b,
+            bus_rows: rows
         })
-        console.log(this.data.bus)
+
+        console.log(this.data.bus);
+        console.log(this.data.bus_rows);
+
     },
 
     /**
