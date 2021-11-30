@@ -3,7 +3,9 @@
 <view class="content">
     <view class="list">
         <block wx:for="{{buses}}">
-            <template is="bus_item" data="{{item}}" />
+            <view id="{{item.id}}" bindtap="onBusItemClick">
+                <template is="bus_item" data="{{item}}" />
+            </view>
         </block>
     </view>
 </view>

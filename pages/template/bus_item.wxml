@@ -1,6 +1,6 @@
 <template name="bus_item">
     <block>
-        <view class="bus_item" bindtap="seeDetail">
+        <view class="bus_item" >
             <view>
                 <image src="{{item.image}}" style="width:75px;height:75px;"></image>
             </view>
