@@ -1,1 +1,2 @@
 /* pages/bus/bus.wxss */
+@import "../template/bus_item.wxss";

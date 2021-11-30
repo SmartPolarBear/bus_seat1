@@ -4,15 +4,17 @@ Page({
     /**
      * 页面的初始数据
      */
-    data: {
-
-    },
+    data: {},
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+        let b = JSON.parse(options.busInfo);
+        this.setData({
+            bus: b
+        })
+        console.log(this.data.bus)
     },
 
     /**
