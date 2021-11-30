@@ -3,7 +3,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: #aaa;
+    box-shadow: inset;
+    color: #eeeeee;
+}
+
+.userinfo-nickname {
+    box-shadow: 4px;
+}
+
+.blur_image {
+    filter: blur(10rpx);
 }
 
 .userinfo-avatar {
@@ -12,8 +21,4 @@
     height: 128rpx;
     margin: 20rpx;
     border-radius: 50%;
-}
-
-.usermotto {
-    margin-top: 200px;
 }
