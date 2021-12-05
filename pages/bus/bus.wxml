@@ -27,4 +27,12 @@
             </view>
         </block>
     </view>
+    <!-- 座位选择表 -->
+    <view>
+        
+    </view>
+    <button  type="primary" class="submit" bindtap='submit'>
+    确认座位
+    </button>
+{{seat.x}}
 </view>
