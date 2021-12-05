@@ -1,6 +1,6 @@
 <import src="../template/bus_item.wxml" />
 <import src="../template/bus_row.wxml" />
-
+<view>{{selected.row1.column1}}</view>
 <view class="content">
     <view class="row">
         <block>
@@ -23,7 +23,7 @@
     <view class="list">
         <block wx:for="{{bus_rows}}">
             <view id="{{item.row}}">
-                <template is="bus_row" data="{{item}}" />
+                <template is="bus_row" data="{{item}}" data-selected="{{selected}}"/>
             </view>
         </block>
     </view>
