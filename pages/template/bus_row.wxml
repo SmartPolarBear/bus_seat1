@@ -1,6 +1,7 @@
 <template name="bus_row">
     <block>
-        <view class="bus_row_container">
+        
+        <view class="bus_row_container" bindtap="onSeatItemClick">
             <view class="bus_row">
                 <image src="../images/icon/account.png" style="width:25px;height:23px;"></image>
                 <image src="../images/icon/account.png" style="width:25px;height:23px;"></image>

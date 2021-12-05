@@ -1,8 +1,8 @@
 <template name="bus_item">
     <block>
-        <view class="bus_item" >
+        <view class="bus_item">
             <view>
-                <image src="{{item.image}}" style="width:75px;height:75px;"></image>
+                <image src="{{item.image}}" style="width:75px;height:75px;" ></image>
             </view>
             <view class="bus_desc">
                 <view class="bus_title">班车{{item.bus_plate_number}}</view>
