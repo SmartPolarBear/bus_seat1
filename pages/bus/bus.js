@@ -1,7 +1,6 @@
 // pages/bus/bus.js
 wx.cloud.init();
 const db=wx.cloud.database();
-const todos=db.collection('bus_seat');
 
 Page({
     /**
@@ -12,41 +11,81 @@ Page({
             x:-1,
             y:-1
         },
-        "Seat":[{
-        "id":1,
-        "selected":0,
-    },{
-        "id":2,
-        "selected":0,
-    },{
-        "id":3,
-        "selected":0,
-    },{
-        "id":4,
-        "selected":0,
-    },{
-        "id":5,
-        "selected":0,
-    },{
-        "id":6,
-        "selected":0,
-    },{
-        "id":7,
-        "selected":0,
-    },{
-        "id":8,
-        "selected":0,
-    },{
-        "id":9,
-        "selected":0,
-    },{
-        "id":10,
-        "selected":0,
-    },{
-        "id":11,
-        "selected":0,
-    }]},
-
+        selected:{
+            row1:{
+                column1:false,
+                '2':false,
+                '3':false,
+                '4':false,
+            },
+            row2:{
+                '1':false,
+                '2':false,
+                '3':false,
+                '4':false,
+            },
+            row3:{
+                '1':false,
+                '2':false,
+                '3':false,
+                '4':false,
+            },
+            row4:{
+                '1':false,
+                '2':false,
+                '3':false,
+                '4':false,
+            },
+            row5:{
+                '1':false,
+                '2':false,
+                '3':false,
+                '4':false,
+            },
+            row6:{
+                '1':false,
+                '2':false,
+                '3':false,
+                '4':false,
+            },
+            row7:{
+                '1':false,
+                '2':false,
+                '3':false,
+                '4':false,
+            },
+            row8:{
+                '1':false,
+                '2':false,
+                '3':false,
+                '4':false,
+            },
+            row9:{
+                '1':false,
+                '2':false,
+                '3':false,
+                '4':false,
+            },
+            row10:{
+                '1':false,
+                '2':false,
+                '3':false,
+                '4':false,
+            },
+            row11:{
+                '1':false,
+                '2':false,
+                '3':false,
+                '4':false,
+            },
+            row12:{
+                '1':false,
+                '2':false,
+                '3':false,
+                '4':false,
+            }
+        }
+    },
     // onSeatItemClick: function (e) {
 
     //     let item = undefined;
@@ -81,9 +120,16 @@ Page({
             bus: b,
             bus_rows: rows
         })
-
+        console.log(bus_seat);
         console.log(this.data.bus);
         console.log(this.data.bus_rows);
+        const bus_seat=db.collection('bus_seat').where({
+            "bus":this.data.bus.bus_plate_number
+        }).get({
+            success:function(res){
+                console.log(res.data)
+            }
+        })
 
     },
 
@@ -104,13 +150,18 @@ Page({
                         y:this.data.seat.y
                 }
                 }
-            })
+            }).then(res=>{
+                console.log('提交成功',res)
+                wx.showToast({
+                  title: '提交成功',
+                })})
+            
         }
     },
 
     //点击座位
     onSeatItemClick(e){
-        //console.log(e.item.row),
+        console.log(e);
         let row=e.currentTarget.dataset.item.row;
         let column=e.currentTarget.dataset.column;
         wx.showToast({
