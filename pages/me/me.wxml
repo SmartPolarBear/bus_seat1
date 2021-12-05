@@ -1,7 +1,7 @@
 <!--index.wxml-->
 
 <view class="content">
-  <view class="row" >
+  <view class="row">
     <image class="blur_image" src="../images/banner_me.jpg" style="width:100%;"></image>
     <view class="userinfo" style="position: absolute;left:45%;top:10%;width:120rpx;text-align:center;">
       <block wx:if="{{canIUseOpenData}}">
@@ -19,6 +19,11 @@
         <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
         <text class="userinfo-nickname">{{userInfo.nickName}}</text>
       </block>
+      <view style="left: auto;">
+        <button>
+        <navigator url='/pages/login/login'>登录</navigator>
+      </button>
+      </view>
     </view>
   </view>
 

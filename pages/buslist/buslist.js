@@ -95,7 +95,7 @@ Page({
     },
 
     onBusItemClick: function (e) {
-        let index=parseInt(e.currentTarget);
+        let index=parseInt(e.currentTarget)
         let item = undefined;
         for (let i = 0; i < this.data.buses.length; i++) {
             if (this.data.buses[i].id == parseInt(e.currentTarget.id)) {
@@ -103,10 +103,8 @@ Page({
                 break;
             }
         }
-
         let clicked = JSON.stringify(item);
         console.log(clicked);
-
         wx.navigateTo({
             url: '../bus/bus?busInfo=' + clicked,
         })

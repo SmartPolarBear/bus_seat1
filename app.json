@@ -2,7 +2,8 @@
   "pages": [
     "pages/buslist/buslist",
     "pages/me/me",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/login/login"
   ],
   "window": {
     "backgroundTextStyle": "light",

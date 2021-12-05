@@ -1,3 +1,9 @@
 /* pages/bus/bus.wxss */
 @import "../template/bus_item.wxss";
 @import "../template/bus_row.wxss";
+
+/*确认座位*/
+.submit{
+  width:500rpx;
+  margin-top:50rpx;
+}
