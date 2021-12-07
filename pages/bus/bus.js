@@ -103,7 +103,7 @@ Page({
                     for (let j = 0; j < 4; j++) {
                         let pushed = false;
                         for (let k = 0; k < res.data.length; k++) {
-                            if (res.data[k].seat.y == i && res.data[k].seat.x == j) {
+                            if (res.data[k].seat.x == i && res.data[k].seat.y == j) {
                                 availablity.push(1);
                                 console.log(i);
                                 console.log(j);
