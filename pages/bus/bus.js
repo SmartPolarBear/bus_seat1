@@ -10,83 +10,9 @@ Page({
         seat: {
             x: -1,
             y: -1
-        },
-        selected: {
-            row1: {
-                column1: false,
-                '2': false,
-                '3': false,
-                '4': false,
-            },
-            row2: {
-                '1': false,
-                '2': false,
-                '3': false,
-                '4': false,
-            },
-            row3: {
-                '1': false,
-                '2': false,
-                '3': false,
-                '4': false,
-            },
-            row4: {
-                '1': false,
-                '2': false,
-                '3': false,
-                '4': false,
-            },
-            row5: {
-                '1': false,
-                '2': false,
-                '3': false,
-                '4': false,
-            },
-            row6: {
-                '1': false,
-                '2': false,
-                '3': false,
-                '4': false,
-            },
-            row7: {
-                '1': false,
-                '2': false,
-                '3': false,
-                '4': false,
-            },
-            row8: {
-                '1': false,
-                '2': false,
-                '3': false,
-                '4': false,
-            },
-            row9: {
-                '1': false,
-                '2': false,
-                '3': false,
-                '4': false,
-            },
-            row10: {
-                '1': false,
-                '2': false,
-                '3': false,
-                '4': false,
-            },
-            row11: {
-                '1': false,
-                '2': false,
-                '3': false,
-                '4': false,
-            },
-            row12: {
-                '1': false,
-                '2': false,
-                '3': false,
-                '4': false,
-            }
         }
     },
-    
+
     fetchOnlineContent: function () {
         let b = this.data.bus;
         let that = this;
@@ -94,7 +20,7 @@ Page({
             "bus": this.data.bus.bus_plate_number
         }).get({
             success: function (res) {
-
+                console.log(res);
                 let rows = [];
                 let row_count = (b.occupied + b.available) / 4;
 
@@ -132,17 +58,26 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+        wx.cloud.init({
+            env:'hxy-4gzf7xuafa682b6e',
+            traceUser:true,
+        })
+
         let b = JSON.parse(options.busInfo);
         this.setData({
             bus: b,
         })
-
         this.fetchOnlineContent();
     },
 
     // 提交座位
     submit() {
-        if (this.data.seat.x == -1 && this.data.seat.y == -1) {
+        if (getApp().globalData.userInfo.nickName == null) {
+            wx.showToast({
+                icon: 'error',
+                title: '请先登录',
+            })
+        } else if (this.data.seat.x == -1 && this.data.seat.y == -1) {
             wx.showToast({
                 icon: 'error',
                 title: '请选定座位',
@@ -151,7 +86,7 @@ Page({
             db.collection('bus_seat').add({
                 data: {
                     "bus": this.data.bus.bus_plate_number,
-                    "phone": "18810207286",
+                    "nickName": getApp().globalData.userInfo.nickName,
                     "seat": {
                         x: this.data.seat.x,
                         y: this.data.seat.y
@@ -163,9 +98,16 @@ Page({
                     title: '提交成功',
                 })
             })
-
+            const _ = db.command
+            db.collection('bus_seat').where({
+                        "bus": this.data.bus.bus_plate_number,
+                        "nickName": getApp().globalData.userInfo.nickName
+                    }).remove().then(res=>{
+                        console.log(res)
+                    })
+            }
             this.fetchOnlineContent();
-        }
+        
     },
 
     //点击座位
@@ -175,7 +117,7 @@ Page({
         let column = e.currentTarget.dataset.column;
         wx.showToast({
             icon: 'success',
-            title: '已选第' + (row + 1) + '行第' + (Number(column) + 1) + '列',
+            title: '已选第' + (row + 1) + '行' + (Number(column) + 1) + '列',
         })
         this.data.seat.x = row;
         this.data.seat.y = column;

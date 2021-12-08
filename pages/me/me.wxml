@@ -20,9 +20,7 @@
         <text class="userinfo-nickname">{{userInfo.nickName}}</text>
       </block>
       <view style="left: auto;">
-        <button>
-        <navigator url='/pages/login/login'>登录</navigator>
-      </button>
+        <button bindtap="getUserProfile">登录</button>
       </view>
     </view>
   </view>

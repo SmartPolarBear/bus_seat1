@@ -23,7 +23,7 @@
     <view class="list">
         <block wx:for="{{bus_rows}}">
             <view id="{{item.row}}">
-                <template is="bus_row" data="{{item}}" data-selected="{{selected}}"/>
+                <template is="bus_row" data="{{item}}" />
             </view>
         </block>
     </view>

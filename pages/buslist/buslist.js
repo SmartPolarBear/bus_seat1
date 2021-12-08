@@ -94,6 +94,43 @@ Page({
         ]
     },
 
+    fetchOnlineContent: function () {
+        const db = wx.cloud.database();
+        const bus_seat = db.collection('buses').where({"bus":1});
+        bus_seat.count().then(
+            res=> {
+                console.log(res);
+                this.data=res;
+                // for (let i = 0; i < row_count; i++) {
+                //     let availablity = [];
+                //     for (let j = 0; j < 4; j++) {
+                //         let pushed = false;
+                //         for (let k = 0; k < res.data.length; k++) {
+                //             if (res.data[k].seat.x == i && res.data[k].seat.y == j) {
+                //                 availablity.push(1);
+                //                 console.log(i);
+                //                 console.log(j);
+                //                 pushed = true;
+                //                 break;
+                //             }
+                //         }
+                //         if (!pushed) {
+                //             availablity.push(0);
+                //         }
+                //     }
+                //     rows.push({
+                //         row: i,
+                //         availablity: availablity
+                //     });
+                // }
+
+                // that.setData({
+                //     bus_rows: rows
+                // })
+            }
+        )
+    },
+
     onBusItemClick: function (e) {
         let index=parseInt(e.currentTarget)
         let item = undefined;
@@ -114,7 +151,11 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+        wx.cloud.init({
+            env:'hxy-4gzf7xuafa682b6e',
+            traceUser:true,
+        })
+        this.fetchOnlineContent();
     },
 
     /**

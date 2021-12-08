@@ -14,6 +14,9 @@ App({
     })
   },
   globalData: {
-    userInfo: null,
+    userInfo: {
+      nickName:null
+    }
+
   }
 })
