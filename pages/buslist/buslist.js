@@ -1,5 +1,6 @@
 // pages/buslist/buslist.js
 var util = require('../../utils/util');
+
 Page({
     /**
      * 页面的初始数据
@@ -134,6 +135,7 @@ Page({
     onBusItemClick: function (e) {
         let index=parseInt(e.currentTarget)
         let item = undefined;
+        console.log(this.data.buses);
         for (let i = 0; i < this.data.buses.length; i++) {
             if (this.data.buses[i].id == parseInt(e.currentTarget.id)) {
                 item = this.data.buses[i];
@@ -155,7 +157,7 @@ Page({
             env:'hxy-4gzf7xuafa682b6e',
             traceUser:true,
         })
-        this.fetchOnlineContent();
+        // this.fetchOnlineContent();
     },
 
     /**
