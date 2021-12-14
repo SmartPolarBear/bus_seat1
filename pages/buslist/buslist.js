@@ -1,5 +1,6 @@
 // pages/buslist/buslist.js
 var util = require('../../utils/util');
+const db = getApp().globalData.db;
 
 Page({
     /**
@@ -12,18 +13,7 @@ Page({
                 "bus_plate_number": "闽D11123",
                 "available": 45,
                 "occupied": 3,
-                "occupied_pos": [{
-                    r: 1,
-                    c: 1
-                },
-                {
-                    r: 2,
-                    c: 4
-                },
-                {
-                    r: 4,
-                    c: 2
-                }],
+          
                 "datetime": util.formatTime(new Date)
             },
             {
@@ -32,29 +22,7 @@ Page({
                 "bus_plate_number": "闽D11323",
                 "available": 42,
                 "occupied": 6,
-                "occupied_pos": [{
-                    r: 1,
-                    c: 1
-                },
-                {
-                    r: 2,
-                    c: 4
-                },
-                {
-                    r: 4,
-                    c: 2
-                },
-                {
-                    r: 3,
-                    c: 3
-                },{
-                    r: 6,
-                    c: 2
-                },
-                {
-                    r: 1,
-                    c: 2
-                }],
+               
                 "datetime": util.formatTime(new Date)
             },
             {
@@ -63,40 +31,13 @@ Page({
                 "bus_plate_number": "闽D13423",
                 "available": 41,
                 "occupied": 7,
-                "occupied_pos": [{
-                    r: 1,
-                    c: 1
-                },
-                {
-                    r: 2,
-                    c: 4
-                },
-                {
-                    r: 4,
-                    c: 2
-                },
-                {
-                    r: 3,
-                    c: 3
-                },{
-                    r: 6,
-                    c: 2
-                },
-                {
-                    r: 1,
-                    c: 2
-                },
-                {
-                    r: 6,
-                    c: 1
-                }],
+            
                 "datetime": util.formatTime(new Date)
             }
         ]
     },
 
     fetchOnlineContent: function () {
-        const db = wx.cloud.database();
         const bus_seat = db.collection('buses').where({"bus":1});
         bus_seat.count().then(
             res=> {
@@ -135,7 +76,6 @@ Page({
     onBusItemClick: function (e) {
         let index=parseInt(e.currentTarget)
         let item = undefined;
-        console.log(this.data.buses);
         for (let i = 0; i < this.data.buses.length; i++) {
             if (this.data.buses[i].id == parseInt(e.currentTarget.id)) {
                 item = this.data.buses[i];
@@ -153,10 +93,6 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        wx.cloud.init({
-            env:'hxy-4gzf7xuafa682b6e',
-            traceUser:true,
-        })
         // this.fetchOnlineContent();
     },
 
