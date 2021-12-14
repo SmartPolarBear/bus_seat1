@@ -1,6 +1,7 @@
 // pages/bus/bus.js
-wx.cloud.init();
-const db = wx.cloud.database();
+
+const app = getApp();
+const db = app.globalData.db;
 
 Page({
     /**
@@ -16,14 +17,16 @@ Page({
     fetchOnlineContent: function () {
         let b = this.data.bus;
         let that = this;
+
         const bus_seat = db.collection('bus_seat').where({
             "bus": this.data.bus.bus_plate_number
         }).get({
+            fail: function (res) {
+                console.log(res)
+            },
             success: function (res) {
-                console.log(res);
                 let rows = [];
                 let row_count = (b.occupied + b.available) / 4;
-
                 for (let i = 0; i < row_count; i++) {
                     let availablity = [];
                     for (let j = 0; j < 4; j++) {
@@ -58,11 +61,6 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        wx.cloud.init({
-            env:'hxy-4gzf7xuafa682b6e',
-            traceUser:true,
-        })
-
         let b = JSON.parse(options.busInfo);
         this.setData({
             bus: b,
@@ -100,14 +98,14 @@ Page({
             })
             const _ = db.command
             db.collection('bus_seat').where({
-                        "bus": this.data.bus.bus_plate_number,
-                        "nickName": getApp().globalData.userInfo.nickName
-                    }).remove().then(res=>{
-                        console.log(res)
-                    })
-            }
-            this.fetchOnlineContent();
-        
+                "bus": this.data.bus.bus_plate_number,
+                "nickName": getApp().globalData.userInfo.nickName
+            }).remove().then(res => {
+                console.log(res)
+            })
+        }
+        this.fetchOnlineContent();
+
     },
 
     //点击座位
