@@ -1,0 +1,37 @@
+<import src="../template/bus_item.wxml" />
+<import src="../template/bus_row.wxml" />
+<view>{{selected.row1.column1}}</view>
+<view class="content">
+    <view class="row">
+        <block>
+        <view class="bus_item" >
+            <view>
+                <image src="{{bus.image}}" style="width:75px;height:75px;"></image>
+            </view>
+            <view class="bus_desc">
+                <view class="bus_title">班车{{bus.bus_plate_number}}</view>
+                <view class="bus_count">
+                    <view>预计{{bus.datetime}}到达 </view>
+                    <view class="bus_available">可用：{{bus.available}}</view>
+                    <view class="bus_occupied">已用：{{bus.occupied}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="bus_hr2"></view>
+    </block>
+    </view>
+    <view class="list">
+        <block wx:for="{{bus_rows}}">
+            <view id="{{item.row}}">
+                <template is="bus_row" data="{{item}}" />
+            </view>
+        </block>
+    </view>
+    <!-- 座位选择表 -->
+    <view>
+        
+    </view>
+    <button  type="primary" class="submit" bindtap='submit'>
+    确认座位
+    </button>
+</view>
