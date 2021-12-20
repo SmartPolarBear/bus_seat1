@@ -158,3 +158,9 @@ list数组下的img为图片地址，id为唯一区分字段，url为点击轮�
 
 ![客服](http://cqu.oss-cn-shenzhen.aliyuncs.com/img/book/github/10.png "客服")
 
+
+
+# 最后记得还有需要完成的事，todo：还需要完成的事
+## 1.ui重新设计
+## 2.选座系统乘车的时候点提交不一定能删除之前所有的座位：有报错
+
