@@ -98,6 +98,8 @@
 |  start | 启动页图  |
 |  times | 提现次数  |
 | user  |  用户数据 |
+| bus  |  车辆数据 |
+| bus_seat  |  选座数据 |
 
 ### 2、设置banner
 
