@@ -52,7 +52,7 @@
       margin-top: 100rpx;
       width: 600rpx;
       height: 90rpx;
-      border-radius: 45rpx;
+      border-radius: 4px;
       border: 1rpx solid #d1d1d1;
       font-size: 30rpx;
       color: #686868;
@@ -66,8 +66,8 @@
       margin-top: 40rpx;
       width: 600rpx;
       height: 90rpx;
-      border-radius: 45rpx;
-      background: #fbbd08;
+      border-radius: 4px;
+      background: #be4210;
       font-size: 30rpx;
       color: #fff;
       display: flex;

@@ -11,7 +11,7 @@
                   <view class="campus">
                         <block wx:if="{{ids!==-1}}">当前选择：{{campus[ids].name}}</block>
                         <block wx:if="{{ids==-1}}">请选择您所在校区</block>
-                        <image class="right" src="/images/right.png" />
+                        <image style="position: absolute; left: 657rpx; top: 290rpx"  class="right" src="/images/right.png" />
                   </view>
             </picker>
              <view class="contact">

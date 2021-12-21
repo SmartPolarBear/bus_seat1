@@ -1,6 +1,6 @@
 .top_box {
       width: 100%;
-      background: #fbbd08;
+      background: #be4210;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -16,7 +16,7 @@
 .search_box {
       width: 620rpx;
       height: 66rpx;
-      border-radius: 33rpx;
+      border-radius: 4rpx;
       background: #fff;
       display: flex;
       align-items: center;
@@ -81,6 +81,7 @@
 }
 
 .nav-item {
+      margin-top: -4px;
       width: 100rpx;
       height: 100%;
       display: inline-block;
@@ -98,15 +99,16 @@
 }
 
 .tab-on {
-      color: #fbbd08;
+      color: #be4210;
       font-size: 32rpx !important;
       font-weight: 600;
-      border-bottom: 4rpx solid #fbbd08 !important;
+      border-bottom: 4rpx solid #be4210 !important;
 }
 
 .kind_img {
-      width: 60rpx;
-      height: 60rpx;
+      width: 72rpx;
+      height: 72rpx;
+
       display: flex;
       justify-content: center;
       align-items: center;
@@ -153,13 +155,13 @@
       align-items: center;
       justify-content: center;
       border: 1rpx solid #eee;
-      border-radius: 10rpx;
+      border-radius: 8rpx;
       font-size: 28rpx;
       letter-spacing: 2rpx;
 }
 
 .list-on {
-      background: #fbbd08;
+      background: #be4210;
       color: #fff;
       border: none !important;
 }

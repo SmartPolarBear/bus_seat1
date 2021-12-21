@@ -4,7 +4,7 @@
       justify-content: space-between;
       padding: 20rpx 30rpx;
       box-sizing: border-box;
-      background: #fbbd08;
+      background: #be4210;
       height: 106rpx;
       align-items: center;
 }
@@ -12,7 +12,7 @@
 .search_box {
       width: 80%;
       height: 66rpx;
-      border-radius: 33rpx 0 0 33rpx;
+      border-radius: 4px;
       background: #fff;
       display: flex;
       align-items: center;
@@ -40,10 +40,10 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background: rgb(0, 0, 0);
+      background: #d8703d;
       color: #fff;
       font-size: 28rpx;
-      border-radius: 0 33rpx 33rpx 0;
+      border-radius: 4px;
       letter-spacing: 4rpx;
 }
 

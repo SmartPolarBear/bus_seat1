@@ -77,7 +77,7 @@
       font-size: 32rpx;
       font-weight: 600;
       color: #000;
-      border-bottom: 4rpx solid #fbbd08;
+      border-bottom: 4rpx solid #be4210;
 }
 
 .user_box {
@@ -336,7 +336,7 @@
 .buy {
       width: 90%;
       height: 70rpx;
-      background: #fbbd08;
+      background: #be4210;
       color: #000;
       letter-spacing: 4rpx;
       font-size: 28rpx;
@@ -350,7 +350,7 @@
       z-index: 9;
       position: fixed;
       bottom: 200rpx;
-      right: 40rpx;
+      left: 40rpx;
       display: flex;
       width: 100rpx;
       flex-direction: column;

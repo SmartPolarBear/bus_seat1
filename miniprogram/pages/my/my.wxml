@@ -23,10 +23,10 @@
             <image src="/images/publish.png"></image>
             <view>我的预约</view>
       </view>
-      <view class="center_1" bindtap="go" data-go="/pages/help/help">
+      <!-- <view class="center_1" bindtap="go" data-go="/pages/help/help">
             <image src="/images/help.png"></image>
             <view>帮助中心</view>
-      </view>
+      </view> -->
 </view>
 <view class="blank"></view>
 <view class="bottom_box">
@@ -48,7 +48,7 @@
       <view class="bottom_card" bindtap="showShare">
             <view class="bottom_1">
                   <image src="/images/fen.png"></image>
-                  <view>好用分享</view>
+                  <view>分享</view>
             </view>
             <image src="/images/go.png"></image>
       </view>

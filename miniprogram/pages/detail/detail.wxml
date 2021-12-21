@@ -18,7 +18,6 @@
 <!--发布信息-->
 <view hidden="{{!first_title}}">
       <view class="user_box">
-            <image lazy-load src="{{userinfo.info.avatarUrl}}"></image>
             <view class="des_box">
                   <view class="user_name">{{userinfo.info.nickName}}</view>
                   <view class="local_box">
@@ -26,9 +25,11 @@
                         <view>{{userinfo.campus.name}}</view>
                   </view>
             </view>
-            <view class="sex">
+            <image lazy-load src="{{userinfo.info.avatarUrl}}"></image>
+
+            <!-- <view class="sex">
                   <image lazy-load src="{{userinfo.info.gender==0?'/images/none.png':(userinfo.info.gender==1?'/images/boy.png':'/images/girl.png')}}"></image>
-            </view>
+            </view> -->
       </view>
       <view class="time_box">
             <view class="kind">{{collegeName.name}}类书</view>
@@ -55,7 +56,7 @@
 <view hidden="{{first_title}}">
       <view class="detail_contain">
             <view class="detail_card detail_border ">
-                  <view class="detail_title">isbn编号</view>
+                  <view class="detail_title">ISBN编号</view>
                   <view class="detail_content">{{bookinfo.isbn}}</view>
             </view>
             <view class="detail_card detail_border ">
@@ -83,7 +84,7 @@
                   <view class="detail_content">{{bookinfo.class}}</view>
             </view>
             <view class="detail_card">
-                  <view class="detail_title">摘要</view>
+                  <view class="detail_title">简介</view>
                   <view class="detail_content">{{bookinfo.summary}}</view>
             </view>
       </view>
@@ -119,6 +120,6 @@
 
 <!--悬浮客服功能-->
 <view class="contact_box" bindtap="go" data-go="/pages/kefu/kefu" animation="{{animationKefuData}}">
-     <image src="/images/ww.jpg" ></image>
+     <image src="/images/comment-quote.png" ></image>
      <view >反馈</view>
 </view>

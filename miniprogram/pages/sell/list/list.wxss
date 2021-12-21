@@ -13,7 +13,7 @@
       padding: 30rpx;
       box-sizing: border-box;
       box-shadow: 0 0 20rpx #eee;
-      border-radius: 16rpx;
+      border-radius: 4px;
       margin-bottom: 30rpx;
 }
 
@@ -30,7 +30,6 @@
       font-size: 30rpx;
       letter-spacing: 2rpx;
       display: flex;
-      align-items: ;
 }
 
 .text-red {
@@ -108,7 +107,7 @@
 .c1 {
       width: 120rpx;
       height: 50rpx;
-      border-radius: 10rpx;
+      border-radius: 4px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -128,7 +127,7 @@
 .c2 {
       width: 200rpx;
       height:53rpx;
-      border-radius: 10rpx;
+      border-radius: 4px;
       display: flex;
       justify-content: center;
       align-items: center;

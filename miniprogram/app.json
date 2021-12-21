@@ -25,9 +25,9 @@
             "pages/buslist/buslist"
       ],
       "window": {
-            "backgroundColor": "#fbbd08",
+            "backgroundColor": "#be4210",
             "backgroundTextStyle": "light",
-            "navigationBarBackgroundColor": "#fbbd08",
+            "navigationBarBackgroundColor": "#be4210",
             "navigationBarTitleText": "厦门大学二手书",
             "navigationBarTextStyle": "white"
       },

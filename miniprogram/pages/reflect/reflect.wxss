@@ -12,11 +12,11 @@
       display: flex;
       padding: 40rpx 40rpx;
       box-shadow: 0 0 20rpx #eee;
-      border-radius: 20rpx;
+      border-radius: 4px;
       flex-direction: column;
       justify-content: space-between;
       height: 240rpx;
-      background: linear-gradient(to bottom right, #fbbd08, #ffee04);
+      background: linear-gradient(to bottom right, #be4210, #ffee04);
 }
 
 .title {
@@ -41,7 +41,7 @@
 .list view {
       font-size: 28rpx;
       letter-spacing: 2rpx;
-      color: #fbbd08;
+      color: #be4210;
 }
 
 .list input {
@@ -55,8 +55,8 @@
 
 .confirm {
       margin-top: 80rpx;
-      background: #fbbd08;
-      border-radius: 20rpx;
+      background: #be4210;
+      border-radius: 4px;
       color: #fff;
       width: 100%;
       height: 80rpx;

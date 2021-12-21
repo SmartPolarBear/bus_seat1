@@ -11,7 +11,7 @@ Page({
             college: JSON.parse(config.data).college.splice(1),
             steps: [{
                         text: '步骤一',
-                        desc: '扫描isbn码'
+                        desc: '扫描ISBN码'
                   },
                   {
                         text: '步骤二',
@@ -96,7 +96,7 @@ Page({
             let isbn = that.data.isbn;
             if (!(/978[0-9]{10}/.test(isbn))) {
                   wx.showToast({
-                        title: '请检查您的isbn号',
+                        title: '请检查您的ISBN号',
                         icon: 'none'
                   });
                   return false;

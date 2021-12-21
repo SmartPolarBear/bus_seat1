@@ -15,7 +15,7 @@
                         <view>搜索历史</view>
                   </view>
                   <block wx:if="{{hislist.length==0}}">
-                        <view class="nosearch">您还没搜索过哟，赶快试试吧</view>
+                        <view class="nosearch">您还没搜索过，赶快试试吧</view>
                   </block>
                   <block wx:if="{{hislist.length>0}}">
                         <block wx:for="{{hislist}}" wx:key="*this">
@@ -36,7 +36,7 @@
             </block>
             <view class="a">
                   <image src="/images/recommend.png"></image>
-                  <view>更多推荐</view>
+                  <view>推荐</view>
             </view>
             <block wx:if="{{newlist.length==0}}">
                   <view class="nosearch">暂无相关推荐</view>
@@ -44,7 +44,6 @@
             <block wx:if="{{newlist.length>0}}">
                   <block wx:for="{{newlist}}" wx:key="_id">
                         <view class="list_box" bindtap="detail" data-id="{{item._id}}">
-                              <image class="list_poster" src="{{item.bookinfo.pic}}"></image>
                               <view class="list_content">
                                     <view class="list_word">
                                           <view class="list_title text-cut">{{item.bookinfo.title}}
@@ -58,6 +57,7 @@
                                           </view>
                                     </view>
                               </view>
+                              <image class="list_poster" src="{{item.bookinfo.pic}}"></image>
                         </view>
                   </block>
             </block>
